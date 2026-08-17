@@ -3,7 +3,8 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("Eileen")
+# define e = Character("Eileen")
+define h = Character('Hain')
 
 
 # The game starts here.
@@ -20,14 +21,39 @@ label start:
     # replace it by adding a file named "eileen happy.png" to the images
     # directory.
 
-    show eileen happy
+    show hain introduce
 
     # These display lines of dialogue.
+    
+    h "Welcome to the Worm Lab!"
 
-    e "You've created a new Ren'Py game."
+    h "My name is Hain, and this is a test-run."
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    show hain idea
+
+    h "Now we're going to try and see if we can play a video."
+
+    show hain ponder
+    
+    h "Is that okay with you?"
+
+    menu:
+        'Yes':
+            $ renpy.movie_cutscene('videos/uhreal.webm')
+        'No':
+            show hain cry
+
+            h "But I worked so hard on it!"
+
+            show hain pleased
+
+            h "No biggie."
+
+    h "Done!"
 
     # This ends the game.
 
+    
+
     return
+
